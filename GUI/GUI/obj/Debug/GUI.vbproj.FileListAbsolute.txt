@@ -1,0 +1,11 @@
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\bin\Debug\GUI.exe.config
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\bin\Debug\GUI.exe
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\bin\Debug\GUI.pdb
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\bin\Debug\GUI.xml
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\obj\Debug\GUI.vbproj.AssemblyReference.cache
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\obj\Debug\GUI.Resources.resources
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\obj\Debug\GUI.vbproj.GenerateResource.cache
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\obj\Debug\GUI.vbproj.CoreCompileInputs.cache
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\obj\Debug\GUI.exe
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\obj\Debug\GUI.xml
+C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\GUI\GUI\obj\Debug\GUI.pdb
