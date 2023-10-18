@@ -33,6 +33,7 @@ Partial Class Form1
         Me.PlayButton = New System.Windows.Forms.Button()
         Me.PauseButton = New System.Windows.Forms.Button()
         Me.StopButton = New System.Windows.Forms.Button()
+        Me.IndexButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'SerialPort1
@@ -85,7 +86,7 @@ Partial Class Form1
         Me.FileListBox.ItemHeight = 25
         Me.FileListBox.Location = New System.Drawing.Point(124, 231)
         Me.FileListBox.Name = "FileListBox"
-        Me.FileListBox.Size = New System.Drawing.Size(393, 404)
+        Me.FileListBox.Size = New System.Drawing.Size(393, 329)
         Me.FileListBox.TabIndex = 7
         '
         'FileName
@@ -124,11 +125,21 @@ Partial Class Form1
         Me.StopButton.Text = "Stop"
         Me.StopButton.UseVisualStyleBackColor = True
         '
+        'IndexButton
+        '
+        Me.IndexButton.Location = New System.Drawing.Point(252, 599)
+        Me.IndexButton.Name = "IndexButton"
+        Me.IndexButton.Size = New System.Drawing.Size(146, 48)
+        Me.IndexButton.TabIndex = 12
+        Me.IndexButton.Text = "Index"
+        Me.IndexButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1200, 703)
+        Me.Controls.Add(Me.IndexButton)
         Me.Controls.Add(Me.StopButton)
         Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.PlayButton)
@@ -155,4 +166,5 @@ Partial Class Form1
     Friend WithEvents PlayButton As Button
     Friend WithEvents PauseButton As Button
     Friend WithEvents StopButton As Button
+    Friend WithEvents IndexButton As Button
 End Class
