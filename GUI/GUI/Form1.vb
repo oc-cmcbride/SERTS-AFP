@@ -56,5 +56,15 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles FileName.Click
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles StopButton.Click
+
+    End Sub
 End Class
