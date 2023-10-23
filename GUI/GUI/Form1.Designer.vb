@@ -86,6 +86,7 @@ Partial Class Form1
         Me.FileListBox.ItemHeight = 25
         Me.FileListBox.Location = New System.Drawing.Point(124, 231)
         Me.FileListBox.Name = "FileListBox"
+        Me.FileListBox.ScrollAlwaysVisible = True
         Me.FileListBox.Size = New System.Drawing.Size(393, 329)
         Me.FileListBox.TabIndex = 7
         '
