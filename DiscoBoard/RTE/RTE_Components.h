@@ -2,8 +2,8 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: BaseProject_2023_07_31
- * RTE configuration: BaseProject_2023_07_31.rteconfig
+ * Project: AFP
+ * RTE configuration: AFP.rteconfig
 */
 #ifndef RTE_COMPONENTS_H
 #define RTE_COMPONENTS_H

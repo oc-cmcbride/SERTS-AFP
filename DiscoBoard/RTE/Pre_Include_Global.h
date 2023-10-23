@@ -2,8 +2,8 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: BaseProject_2023_07_31
- * RTE configuration: BaseProject_2023_07_31.rteconfig
+ * Project: AFP
+ * RTE configuration: AFP.rteconfig
 */
 #ifndef PRE_INCLUDE_GLOBAL_H
 #define PRE_INCLUDE_GLOBAL_H
