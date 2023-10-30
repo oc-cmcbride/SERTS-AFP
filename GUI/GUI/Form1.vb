@@ -8,10 +8,16 @@ Public Class Form1
     Dim ShowFiles As Integer = 1
     Dim StartFileList As Integer = 2
     Dim EndFileList As Integer = 3
+    Dim PlayFile As Integer = 4
+    Dim PauseFile As Integer = 5
+    Dim StopFile As Integer = 6
 
     Dim ShowFilesStr As String = "1"
     Dim StartFileListStr As String = "2"
     Dim EndFileListStr As String = "3"
+    Dim PlayFileStr As String = "4"
+    Dim PauseFileStr As String = "5"
+    Dim StopFileStr As String = "6"
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -130,7 +136,7 @@ Public Class Form1
         b(0) = 0
         ' A value of negative one (-1) is returned if no item is selected
         If Not (FileListBox.SelectedIndex = -1) Then
-            SerialPort1.Write("4", 0, 1)
+            SerialPort1.Write(PlayFileStr, 0, 1)
             For index As Integer = 1 To 30
             Next
             SerialPort1.Write(FileListBox.SelectedItem)
@@ -139,11 +145,17 @@ Public Class Form1
     End Sub
 
     Private Sub Pause_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
-
+        If SerialPort1.IsOpen Then
+            ' Send Show_Files command
+            SerialPort1.Write(PauseFileStr, 0, 1)
+        End If
     End Sub
 
     Private Sub Stop_Click(sender As Object, e As EventArgs) Handles StopButton.Click
-
+        If SerialPort1.IsOpen Then
+            ' Send Show_Files command
+            SerialPort1.Write(StopFileStr, 0, 1)
+        End If
     End Sub
 End Class
 

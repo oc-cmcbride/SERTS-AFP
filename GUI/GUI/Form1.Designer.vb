@@ -29,7 +29,6 @@ Partial Class Form1
         Me.Disconnect = New System.Windows.Forms.Button()
         Me.ComResultTextBox = New System.Windows.Forms.TextBox()
         Me.FileListBox = New System.Windows.Forms.ListBox()
-        Me.FileName = New System.Windows.Forms.Label()
         Me.PlayButton = New System.Windows.Forms.Button()
         Me.PauseButton = New System.Windows.Forms.Button()
         Me.StopButton = New System.Windows.Forms.Button()
@@ -44,7 +43,7 @@ Partial Class Form1
         '
         Me.ComListBox.FormattingEnabled = True
         Me.ComListBox.ItemHeight = 25
-        Me.ComListBox.Location = New System.Drawing.Point(36, 36)
+        Me.ComListBox.Location = New System.Drawing.Point(175, 202)
         Me.ComListBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComListBox.Name = "ComListBox"
         Me.ComListBox.Size = New System.Drawing.Size(178, 129)
@@ -52,7 +51,7 @@ Partial Class Form1
         '
         'Connect
         '
-        Me.Connect.Location = New System.Drawing.Point(241, 36)
+        Me.Connect.Location = New System.Drawing.Point(117, 361)
         Me.Connect.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Connect.Name = "Connect"
         Me.Connect.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -63,7 +62,7 @@ Partial Class Form1
         '
         'Disconnect
         '
-        Me.Disconnect.Location = New System.Drawing.Point(376, 36)
+        Me.Disconnect.Location = New System.Drawing.Point(284, 361)
         Me.Disconnect.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Disconnect.Name = "Disconnect"
         Me.Disconnect.Size = New System.Drawing.Size(141, 36)
@@ -73,7 +72,7 @@ Partial Class Form1
         '
         'ComResultTextBox
         '
-        Me.ComResultTextBox.Location = New System.Drawing.Point(241, 105)
+        Me.ComResultTextBox.Location = New System.Drawing.Point(108, 434)
         Me.ComResultTextBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ComResultTextBox.Name = "ComResultTextBox"
         Me.ComResultTextBox.Size = New System.Drawing.Size(330, 31)
@@ -84,33 +83,24 @@ Partial Class Form1
         '
         Me.FileListBox.FormattingEnabled = True
         Me.FileListBox.ItemHeight = 25
-        Me.FileListBox.Location = New System.Drawing.Point(124, 231)
+        Me.FileListBox.Location = New System.Drawing.Point(678, 168)
         Me.FileListBox.Name = "FileListBox"
         Me.FileListBox.ScrollAlwaysVisible = True
         Me.FileListBox.Size = New System.Drawing.Size(393, 329)
         Me.FileListBox.TabIndex = 7
         '
-        'FileName
-        '
-        Me.FileName.AutoSize = True
-        Me.FileName.Location = New System.Drawing.Point(818, 308)
-        Me.FileName.Name = "FileName"
-        Me.FileName.Size = New System.Drawing.Size(109, 25)
-        Me.FileName.TabIndex = 8
-        Me.FileName.Text = "File Name"
-        '
         'PlayButton
         '
-        Me.PlayButton.Location = New System.Drawing.Point(837, 427)
+        Me.PlayButton.Location = New System.Drawing.Point(815, 551)
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.Size = New System.Drawing.Size(75, 57)
+        Me.PlayButton.Size = New System.Drawing.Size(118, 57)
         Me.PlayButton.TabIndex = 9
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = True
         '
         'PauseButton
         '
-        Me.PauseButton.Location = New System.Drawing.Point(714, 427)
+        Me.PauseButton.Location = New System.Drawing.Point(678, 551)
         Me.PauseButton.Name = "PauseButton"
         Me.PauseButton.Size = New System.Drawing.Size(98, 57)
         Me.PauseButton.TabIndex = 10
@@ -119,7 +109,7 @@ Partial Class Form1
         '
         'StopButton
         '
-        Me.StopButton.Location = New System.Drawing.Point(939, 427)
+        Me.StopButton.Location = New System.Drawing.Point(973, 551)
         Me.StopButton.Name = "StopButton"
         Me.StopButton.Size = New System.Drawing.Size(98, 57)
         Me.StopButton.TabIndex = 11
@@ -128,7 +118,7 @@ Partial Class Form1
         '
         'IndexButton
         '
-        Me.IndexButton.Location = New System.Drawing.Point(252, 599)
+        Me.IndexButton.Location = New System.Drawing.Point(787, 70)
         Me.IndexButton.Name = "IndexButton"
         Me.IndexButton.Size = New System.Drawing.Size(146, 48)
         Me.IndexButton.TabIndex = 12
@@ -144,7 +134,6 @@ Partial Class Form1
         Me.Controls.Add(Me.StopButton)
         Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.PlayButton)
-        Me.Controls.Add(Me.FileName)
         Me.Controls.Add(Me.FileListBox)
         Me.Controls.Add(Me.ComResultTextBox)
         Me.Controls.Add(Me.Disconnect)
@@ -163,7 +152,6 @@ Partial Class Form1
     Friend WithEvents Disconnect As Button
     Friend WithEvents ComResultTextBox As TextBox
     Friend WithEvents FileListBox As ListBox
-    Friend WithEvents FileName As Label
     Friend WithEvents PlayButton As Button
     Friend WithEvents PauseButton As Button
     Friend WithEvents StopButton As Button
