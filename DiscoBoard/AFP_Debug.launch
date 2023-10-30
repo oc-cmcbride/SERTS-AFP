@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.arm.debug.cmsis.launch">
+    <stringAttribute key="*:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;149&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;90&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;95&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;41&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;50&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;37&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;62&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;53&#9;-1&#9;true"/>
+    <mapAttribute key="AverageDurationTracker">
+        <mapEntry key="*Fetching Data Model" value="1265364"/>
+        <mapEntry key="*list global low level symbols" value="29538672"/>
+        <mapEntry key="*loading values from target" value="6827425"/>
+        <mapEntry key="*updating variables" value="973557"/>
+        <mapEntry key="AddEventObserver" value="1451793"/>
+        <mapEntry key="Retrieving globals list" value="7416700"/>
+        <mapEntry key="break" value="4635900"/>
+        <mapEntry key="compute execution mode" value="939146"/>
+        <mapEntry key="continue" value="54059559"/>
+        <mapEntry key="file" value="242297790"/>
+        <mapEntry key="get capabilities" value="300342"/>
+        <mapEntry key="get execution addresss" value="486151"/>
+        <mapEntry key="get source lines" value="804875"/>
+        <mapEntry key="initialize command help" value="39616485"/>
+        <mapEntry key="interrupt" value="2420086300"/>
+        <mapEntry key="list breakpoint options" value="946344"/>
+        <mapEntry key="list breakpoints" value="546815"/>
+        <mapEntry key="list instruction sets" value="1290570"/>
+        <mapEntry key="list signals" value="1327009"/>
+        <mapEntry key="list watchpoint options" value="3081251"/>
+        <mapEntry key="list watchpoints" value="454579"/>
+        <mapEntry key="load" value="6181539"/>
+        <mapEntry key="remove" value="5121200"/>
+        <mapEntry key="run script" value="9400114601"/>
+        <mapEntry key="set CWD" value="4377606"/>
+        <mapEntry key="set breakpoint properties" value="8559300"/>
+        <mapEntry key="set debug-from" value="1390743"/>
+        <mapEntry key="start" value="61761628"/>
+        <mapEntry key="target reset" value="49043123"/>
+        <mapEntry key="toggleBreakpoint" value="13194900"/>
+        <mapEntry key="waitForTargetToStop" value="46596586"/>
+    </mapAttribute>
+    <stringAttribute key="CLOCK_SPEED" value="10MHz"/>
+    <stringAttribute key="CMSIS_DCORE" value="Cortex-M4"/>
+    <stringAttribute key="CMSIS_EXE_FILE" value="${workspace_loc:/AFP/Debug/AFP.axf}"/>
+    <booleanAttribute key="CMSIS_FLASHABLE" value="true"/>
+    <mapAttribute key="CMSIS_FLASH_ALG_0_DEFAULTS">
+        <mapEntry key="CMSIS_FLASH_ALG_0_FILE" value="STM32F40xxx_41xxx_OPT.FLM"/>
+        <mapEntry key="CMSIS_FLASH_ALG_0_IS_DEFAULT" value="false"/>
+        <mapEntry key="CMSIS_FLASH_ALG_0_RAM_SIZE" value="131072"/>
+        <mapEntry key="CMSIS_FLASH_ALG_0_RAM_START" value="536870912"/>
+        <mapEntry key="CMSIS_FLASH_ALG_0_REGION_SIZE" value="4"/>
+        <mapEntry key="CMSIS_FLASH_ALG_0_REGION_START" value="536854528"/>
+    </mapAttribute>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_ERASE_METHOD" value="SECTORS"/>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_FILE" value="STM32F4xx_1024.FLM"/>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_FILE_PATH" value=""/>
+    <booleanAttribute key="CMSIS_FLASH_ALG_0_FORCE_PROGRAM" value="false"/>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_IS_DEFAULT" value="true"/>
+    <booleanAttribute key="CMSIS_FLASH_ALG_0_PROGRAM" value="true"/>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_RAM_SIZE" value="131072"/>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_RAM_START" value="536870912"/>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_REGION_SIZE" value="1048576"/>
+    <stringAttribute key="CMSIS_FLASH_ALG_0_REGION_START" value="134217728"/>
+    <booleanAttribute key="CMSIS_FLASH_ALG_0_VERFIY" value="true"/>
+    <mapAttribute key="CMSIS_FLASH_ALG_1_DEFAULTS">
+        <mapEntry key="CMSIS_FLASH_ALG_1_FILE" value="STM32F4xx_1024.FLM"/>
+        <mapEntry key="CMSIS_FLASH_ALG_1_IS_DEFAULT" value="true"/>
+        <mapEntry key="CMSIS_FLASH_ALG_1_RAM_SIZE" value="131072"/>
+        <mapEntry key="CMSIS_FLASH_ALG_1_RAM_START" value="536870912"/>
+        <mapEntry key="CMSIS_FLASH_ALG_1_REGION_SIZE" value="1048576"/>
+        <mapEntry key="CMSIS_FLASH_ALG_1_REGION_START" value="134217728"/>
+    </mapAttribute>
+    <mapAttribute key="CMSIS_FLASH_ALG_2_DEFAULTS">
+        <mapEntry key="CMSIS_FLASH_ALG_2_FILE" value="STM32F4xx_OTP.FLM"/>
+        <mapEntry key="CMSIS_FLASH_ALG_2_IS_DEFAULT" value="false"/>
+        <mapEntry key="CMSIS_FLASH_ALG_2_RAM_SIZE" value="131072"/>
+        <mapEntry key="CMSIS_FLASH_ALG_2_RAM_START" value="536870912"/>
+        <mapEntry key="CMSIS_FLASH_ALG_2_REGION_SIZE" value="528"/>
+        <mapEntry key="CMSIS_FLASH_ALG_2_REGION_START" value="536836096"/>
+    </mapAttribute>
+    <booleanAttribute key="CMSIS_FLASH_AS_CONNECT" value="true"/>
+    <booleanAttribute key="CMSIS_FLASH_SUPRESS" value="false"/>
+    <booleanAttribute key="CMSIS_LOAD_SYMBOLS_ONLY" value="false"/>
+    <stringAttribute key="CMSIS_PACK_NAME" value="STM32F4xx_DFP_STM32F407VGTx"/>
+    <stringAttribute key="CMSIS_PACK_VERSION" value="2.17.1"/>
+    <stringAttribute key="CMSIS_PNAME" value=""/>
+    <stringAttribute key="CMSIS_PREVIOUS_PRIMARY_FILE" value="C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\Debug\AFP.axf"/>
+    <stringAttribute key="CMSIS_PRIMARY_FILE" value="${workspace_loc:/AFP/Debug/AFP.axf}"/>
+    <stringAttribute key="CMSIS_PROJ" value="AFP"/>
+    <stringAttribute key="CMSIS_PROJECT_EXECUTABLE" value="${workspace_loc:/AFP/Debug/AFP.axf}"/>
+    <stringAttribute key="CMSIS_RESET_TYPE" value="reset.system"/>
+    <stringAttribute key="CMSIS_SDF_DIR" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx"/>
+    <stringAttribute key="CMSIS_SVD_DIR" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\SVD\STM32F407"/>
+    <listAttribute key="FILES.ICE_DEBUG">
+        <listEntry value="ON_DEMAND_LOAD"/>
+        <listEntry value="ALSO_LOAD_SYMBOLS"/>
+    </listAttribute>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.TYPE" value="SYMBOLS_FILE"/>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.VALUE" value="C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\Debug\AFP.axf"/>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.1.TYPE" value="SFR_SEARCH_DIRS"/>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.1.VALUE" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\SVD\STM32F407"/>
+    <intAttribute key="FILES.ICE_DEBUG.RESOURCES.COUNT" value="2"/>
+    <stringAttribute key="FILES.SELECTED_DEBUG_OPEATION" value="ICE_DEBUG"/>
+    <booleanAttribute key="KEY_COMMANDS_AFTER_CONNECT" value="false"/>
+    <booleanAttribute key="KEY_COMMANDS_AS_CONNECT" value="true"/>
+    <stringAttribute key="KEY_COMMANDS_AS_CONNECT_TEXT" value="reset reset.system&#13;&#10;flash load-multiple &quot;C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\Debug\AFP.axf&quot;"/>
+    <booleanAttribute key="SWD" value="true"/>
+    <booleanAttribute key="SWJ" value="true"/>
+    <stringAttribute key="ULP_CONFIG" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\ulp-config.txt"/>
+    <stringAttribute key="breakpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;breakpoints order=&quot;ALPHA&quot;&gt;&#10;&lt;/breakpoints&gt;&#10;"/>
+    <stringAttribute key="config_db_connection_keys" value="FILES.SELECTED_DEBUG_OPEATION rvi_address connection_type CMSIS_PROJ"/>
+    <stringAttribute key="config_db_connection_type" value="Bare Metal Debug"/>
+    <stringAttribute key="config_db_platform_name" value="STM32F4xx_DFP_STM32F407VGTx"/>
+    <stringAttribute key="config_db_project_type" value="Bare Metal Debug"/>
+    <stringAttribute key="config_db_project_type_id" value="BARE_METAL"/>
+    <stringAttribute key="config_file" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\platform.sdf"/>
+    <booleanAttribute key="connectOnly" value="false"/>
+    <stringAttribute key="connection_type" value="ST-Link"/>
+    <booleanAttribute key="debugSequenceLogging" value="false"/>
+    <listAttribute key="debugger.view.VariableTreeView:USER_ADDED_FILE_STATICS:*"/>
+    <listAttribute key="debugger.view.VariableTreeView:USER_ADDED_GLOBALS:*"/>
+    <booleanAttribute key="debugger.view.variable.DrawAsHex" value="false"/>
+    <stringAttribute key="dtsl_config" value="DtslScript_DebugAndOnChipTrace"/>
+    <stringAttribute key="dtsl_config_script" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\dtsl_config_script.py"/>
+    <stringAttribute key="dtsl_options_file" value=""/>
+    <booleanAttribute key="holdReset" value="false"/>
+    <intAttribute key="launch_configuration_version" value="3"/>
+    <stringAttribute key="os_extension_id" value="com.arm.debug.os.rtx"/>
+    <booleanAttribute key="preReset" value="false"/>
+    <stringAttribute key="rvi_address" value="0670FF485550755187143708"/>
+    <stringAttribute key="stopAtExpression" value="main"/>
+    <stringAttribute key="watchpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;watchpoints&gt;&#10;&lt;/watchpoints&gt;&#10;"/>
+</launchConfiguration>

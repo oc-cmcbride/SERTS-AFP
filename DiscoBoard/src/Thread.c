@@ -20,14 +20,28 @@
 
 // File reading constants
 #define Show_Files_char "1"
-#define Save_File_char "4"
-enum commands{
+#define Play_File_char "4"
+
+// Action/Event constants
+#define MAX_ACTIONS 10
+
+// Audio play constants
+#define NUM_CHAN 2						// Number of audio channels
+#define NUM_POINTS 1024					// Number of points per channel
+#define BUF_LEN NUM_CHAN*NUM_POINTS		// Length of the audio buffer
+
+// Event definitions
+enum event {
   IndexPressed,
-  IndexingDone
+  IndexingDone,
+  PlayPressed,
+  ResumePressed,
+  PausePressed,
+  StopEvent
 };
 
 // State Machine definitions
-enum state{
+enum state {
   NoState,
   Stopped,
   Indexing,
@@ -48,14 +62,45 @@ enum action {
 	yellowOn,
 	startListFiles,
 	startStreamAudio,
+	resumeStreamAudio,
+	pauseStreamAudio,
 	stopStreamAudio
 };
 
 
 /*
+ * STRUCTS
+ */
+// WAVE file header format
+typedef struct WAVHEADER {
+	unsigned char riff[4];						// RIFF string
+	uint32_t overall_size;				// overall size of file in bytes
+	unsigned char wave[4];						// WAVE string
+	unsigned char fmt_chunk_marker[4];		// fmt string with trailing null char
+	uint32_t length_of_fmt;					// length of the format data
+	uint16_t format_type;					// format type. 1-PCM, 3- IEEE float, 6 - 8bit A law, 7 - 8bit mu law
+	uint16_t channels;						// no.of channels
+	uint32_t sample_rate;					// sampling rate (blocks per second)
+	uint32_t byterate;						// SampleRate * NumChannels * BitsPerSample/8
+	uint16_t block_align;					// NumChannels * BitsPerSample/8
+	uint16_t bits_per_sample;				// bits per sample, 8- 8bits, 16- 16 bits etc
+	unsigned char data_chunk_header [4];		// DATA string or FLLR string
+	uint32_t data_size;						// NumSamples * NumChannels * BitsPerSample/8 - size of the next chunk that will be read
+} WAVHEADER;
+
+
+/*
+ * GLOBAL VARIABLES
+ */
+char currentFileName[256];		// Current playing file name
+int16_t AudioBuffer0[BUF_LEN];	// Buffer0 used for audio playing
+int16_t AudioBuffer1[BUF_LEN];	// Buffer1 used for audio playing
+
+
+/*
  * FUNCTION PROTOTYPES AND THREAD DEFINITIONS
  */
-void Process_Event(uint16_t event, uint32_t actionList[10]);
+void Process_Event(uint16_t event, uint32_t actionList[MAX_ACTIONS]);
 
 void Rx_Command(const void *arg);
 osThreadId tid_Rx_Command;
@@ -69,6 +114,17 @@ void File_System(const void *arg);
 osThreadId tid_File_System;
 osThreadDef(File_System, osPriorityNormal, 1, 0);
 
+/*
+ * SEMAPHORE DEFINITIONS
+ */
+// File name access
+osSemaphoreDef(SEM_FILE);
+osSemaphoreId SEM_FILE_ID;
+
+// DMA buffer change
+osSemaphoreDef(SEM_DMA);
+osSemaphoreId SEM_DMA_ID;
+
 
 /*
  * MESSAGE QUEUE DEFINITIONS
@@ -81,6 +137,10 @@ osMessageQDef(CMDQueue, 1, uint32_t);
 osMessageQId mid_FSQueue;
 osMessageQDef(FSQueue, 1, uint32_t);
 
+// Command queue from File_System to BSP_AUDIO_OUT_TransferComplete_Callback
+osMessageQId mid_DMAQueue;
+osMessageQDef(DMAQueue, 1, int16_t);
+
 
 /*
  * FUNCTION DEFINITIONS
@@ -90,6 +150,10 @@ void Init_Thread (void) {
 	LED_Initialize(); // Initialize the LEDs
 	UART_Init(); // Initialize the UART
 	
+	// Create semaphores
+	SEM_FILE_ID = osSemaphoreCreate(osSemaphore(SEM_FILE), 1);
+	SEM_DMA_ID = osSemaphoreCreate(osSemaphore(SEM_DMA), 0);
+
 	// Create queues
 	mid_CMDQueue = osMessageCreate(osMessageQ(CMDQueue), NULL);
 	if (!mid_CMDQueue) return;
@@ -107,7 +171,7 @@ void Init_Thread (void) {
 
 
 // State machine function (passive object)
-void Process_Event(uint16_t event, uint32_t actionList[10]) {
+void Process_Event(uint16_t event, uint32_t actionList[MAX_ACTIONS]) {
 	// Declare locals
 	static uint16_t Current_State = NoState;
 	int actionIndex = 0;
@@ -133,6 +197,16 @@ void Process_Event(uint16_t event, uint32_t actionList[10]) {
 			actionList[actionIndex++] = blueOn;
 			actionList[actionIndex++] = startListFiles;
 		}
+		else if (event == PlayPressed) {
+			// Next State
+			Current_State = Playing;
+			// Exit Actions
+			actionList[actionIndex++] = redOff;
+			// Transition actions
+			// Playing entry actions
+			actionList[actionIndex++] = greenOn;
+			actionList[actionIndex++] = startStreamAudio;
+		}
 		break;
 	case Indexing:
 		if (event == IndexingDone) {
@@ -144,6 +218,12 @@ void Process_Event(uint16_t event, uint32_t actionList[10]) {
 			// Stop entry actions
 			actionList[actionIndex++] = redOn;
 		}
+		break;
+	case Playing:
+
+		break;
+	case Paused:
+
 		break;
 	default:
 		break;
@@ -158,7 +238,6 @@ void Process_Event(uint16_t event, uint32_t actionList[10]) {
 void Rx_Command (void const *arg) {
 	// Declare locals
 	char rx_char[2] = {0, 0};
-	char receivedFile[256];
 
 	// Thread loop
 	while(1) {
@@ -170,11 +249,14 @@ void Rx_Command (void const *arg) {
 			// Show Files char received
 			osMessagePut(mid_CMDQueue, IndexPressed, osWaitForever);
 		}
-		else if (!strcmp(rx_char, Save_File_char)) {
+		else if (!strcmp(rx_char, Play_File_char)) {
 			// Save the next string into the receivedFile buffer
-			LED_On(LED_Green);
-			UART_receivestring(receivedFile, 256);
-			LED_Off(LED_Green);
+			osSemaphoreWait(SEM_FILE_ID, osWaitForever);
+			UART_receivestring(currentFileName, 256);
+			osSemaphoreRelease(SEM_FILE_ID);
+
+			// Play button pressed
+			osMessagePut(mid_CMDQueue, PlayPressed, osWaitForever);
 		}
 	}
 }
@@ -183,7 +265,7 @@ void Rx_Command (void const *arg) {
 void Control (void const *arg) {
 	// Declare locals
 	osEvent evt;
-	uint32_t actionList[10];
+	uint32_t actionList[MAX_ACTIONS];
 	int i;
 
 	// Initialize state machine
@@ -200,7 +282,7 @@ void Control (void const *arg) {
 			Process_Event(evt.value.v, actionList);
 
 			// Perform actions
-			for (i = 0; (i < 10) && (actionList[i] != endActions); i++) {
+			for (i = 0; (i < MAX_ACTIONS) && (actionList[i] != endActions); i++) {
 				switch(actionList[i]) {
 				case redOff:
 					LED_Off(LED_Red);
@@ -227,7 +309,10 @@ void Control (void const *arg) {
 					LED_On(LED_Orange);
 					break;
 				case startListFiles:
-					osMessagePut(mid_FSQueue, IndexPressed, osWaitForever);
+					osMessagePut(mid_FSQueue, startListFiles, osWaitForever);
+					break;
+				case startStreamAudio:
+					osMessagePut(mid_FSQueue, startStreamAudio, osWaitForever);
 					break;
 				default:
 					break;
@@ -240,6 +325,7 @@ void Control (void const *arg) {
 // File System thread
 void File_System (void const *arg) {
 	// Declare locals
+	static uint8_t rtrn = 0;	// return variable
 	usbStatus ustatus;			// USB driver status variable
 	uint8_t drivenum = 0;		// U0: drive number
 	char *drive_name = "U0:";	// USB drive name
@@ -248,6 +334,10 @@ void File_System (void const *arg) {
 	char *StartFileList_msg = "2\n";
 	char *EndFileList_msg = "3\n";
 	fsFileInfo fileInfo;
+	FILE *audioFile;
+	WAVHEADER header; 			// header struct for wav file
+	size_t rd; 					// number of blocks read using fread
+	int16_t bufIndx = 0; 		// Current buffer index (can only be 0 or 1)
 
 
 	// Initialize USB device
@@ -277,25 +367,174 @@ void File_System (void const *arg) {
 			evt = osMessageGet(mid_FSQueue, osWaitForever);
 
 			// Check for valid message
-			if ((evt.status == osEventMessage) && (evt.value.v == IndexPressed)) {
-				// File system enabled, send start message
-				UART_send(StartFileList_msg, 2);
+			if (evt.status == osEventMessage) {
+				// Handle event
+				switch (evt.value.v) {
+				case startListFiles:
+					// File system enabled, send start message
+					UART_send(StartFileList_msg, 2);
 
-				// File system loop
-				fileInfo.fileID = 0;
-				while (ffind("*.wav", &fileInfo) == fsOK) {
-					if (fileInfo.attrib == 32) {
-						UART_send(fileInfo.name, strlen(fileInfo.name));
-						UART_send("\n", 1);
+					// File system loop
+					fileInfo.fileID = 0;
+					while (ffind("*.wav", &fileInfo) == fsOK) {
+						if (fileInfo.attrib == 32) {
+							UART_send(fileInfo.name, strlen(fileInfo.name));
+							UART_send("\n", 1);
+						}
 					}
-				}
 
-				// File system disabled, send end messages
-				UART_send(EndFileList_msg, 2);
-				osMessagePut(mid_CMDQueue, IndexingDone, osWaitForever);
-			}
+					// File system disabled, send end messages
+					UART_send(EndFileList_msg, 2);
+					osMessagePut(mid_CMDQueue, IndexingDone, osWaitForever);
+
+					break;
+				case startStreamAudio:
+					// Open file
+					osSemaphoreWait(SEM_FILE_ID, osWaitForever);
+					audioFile = fopen(currentFileName, "r");
+					osSemaphoreRelease(SEM_FILE_ID);
+
+					if (audioFile != NULL) {
+						// Read header
+						fread((void *)&header, sizeof(header), 1, audioFile);
+
+						// Initialize audio output
+						rtrn = BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_AUTO, 0x46, header.sample_rate);
+						if (rtrn != AUDIO_OK) {
+							// Audio init error handling
+						}
+
+						// Generate initial data for audio buffer
+						rd = fread((void *)AudioBuffer0, sizeof(int16_t), BUF_LEN, audioFile);
+
+						// Start the audio player, size is number of bytes so mult. by 2
+						BSP_AUDIO_OUT_Play((uint16_t *)AudioBuffer0, BUF_LEN*2);
+					}
+
+					// No break at end of case!
+
+				case resumeStreamAudio:
+					// If not at the beginning of the song, resume play
+					if (evt.value.v == resumeStreamAudio) {
+						// Fill next buffer
+						if (bufIndx) {
+							// Switch from buffer 1 to buffer 0. Fill buffer 0.
+							bufIndx = 0;
+							rd = fread((void *)AudioBuffer0, sizeof(int16_t), BUF_LEN, audioFile);
+						}
+						else {
+							// Switch from buffer 0 to buffer 1. Fill buffer 1.
+							bufIndx = 1;
+							rd = fread((void *)AudioBuffer1, sizeof(int16_t), BUF_LEN, audioFile);
+						}
+
+						// Unmute
+						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
+
+						// Start DMA again
+						osMessagePut(mid_DMAQueue, bufIndx, osWaitForever);
+						osSemaphoreWait(SEM_DMA_ID, osWaitForever);
+					}
+
+					// Play loop
+					while (rd == BUF_LEN) {
+						// Fill next buffer
+						if (bufIndx) {
+							// Switch from buffer 1 to buffer 0. Fill buffer 0.
+							bufIndx = 0;
+							rd = fread((void *)AudioBuffer0, sizeof(int16_t), BUF_LEN, audioFile);
+						}
+						else {
+							// Switch from buffer 0 to buffer 1. Fill buffer 1.
+							bufIndx = 1;
+							rd = fread((void *)AudioBuffer1, sizeof(int16_t), BUF_LEN, audioFile);
+						}
+
+						// Only put more data on the DMA with a full buffer
+						if (rd == BUF_LEN) {
+							// Send message with next buffer number
+							osMessagePut(mid_DMAQueue, bufIndx, osWaitForever);
+
+							// Wait for semaphore to release
+							osSemaphoreWait(SEM_DMA_ID, osWaitForever);
+						}
+
+						// Read message queue with no delay
+						evt = osMessageGet(mid_FSQueue, 0);
+
+						// Check for valid message
+						if (evt.status == osEventMessage) {
+							// Check for pause or stop message
+							if (evt.value.v == pauseStreamAudio) {
+								// Mute audio
+								BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+
+								// Set read length greater than buffer length; this indicates a pause
+								rd = BUF_LEN + 1;
+							}
+							else if (evt.value.v == stopStreamAudio) {
+								// Stop playing; set buffer length to 0
+								rd = 0;
+							}
+						}
+					} // end while (rd == BUF_LEN)
+
+					// Audio file not playing. Only stop file if rd is less than BUF_LEN.v
+					if (rd < BUF_LEN) {
+						// Send song done to state machine
+						osMessagePut(mid_CMDQueue, StopEvent, osWaitForever);
+
+						// End of song or stop
+						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+
+						// Close audio file
+						fclose(audioFile);
+					}
+					break; // end case ResumePressed
+				default:
+					break;
+				} // end switch (evt.value.v)
+			} // end if (status == osEventMessage)
 		} // end while (1)
 	} // end if (ustatus == usbOK)
+}
+
+
+/* User Callbacks: user has to implement these functions if they are needed. */
+/* This function is called when the requested data has been completely transferred. */
+void    BSP_AUDIO_OUT_TransferComplete_CallBack(void){
+	// Declare locals
+	osEvent evt;
+
+	// Read message queue for next buffer
+	evt = osMessageGet(mid_DMAQueue, 0);
+
+	// Check if a message was received
+	if (evt.status == osEventMessage) {
+		// Check which buffer to read from next
+		if (evt.value.v == 0) {
+			// Buffer 0
+			BSP_AUDIO_OUT_ChangeBuffer((uint16_t*)AudioBuffer0, BUF_LEN);
+		}
+		else {
+			// Buffer 1
+			BSP_AUDIO_OUT_ChangeBuffer((uint16_t*)AudioBuffer1, BUF_LEN);
+		}
+	}
+
+	// Buffer changed, release semaphore
+	osSemaphoreRelease(SEM_DMA_ID);
+}
+
+/* This function is called when half of the requested buffer has been transferred. */
+void    BSP_AUDIO_OUT_HalfTransfer_CallBack(void){
+}
+
+/* This function is called when an Interrupt due to transfer error or peripheral
+   error occurs. */
+void    BSP_AUDIO_OUT_Error_CallBack(void){
+		while(1){
+		}
 }
 
 
