@@ -37,7 +37,8 @@ enum event {
   PlayPressed,
   ResumePressed,
   PausePressed,
-  StopEvent
+  StopPressed,
+  EndOfAudioFile
 };
 
 // State Machine definitions
@@ -220,7 +221,15 @@ void Process_Event(uint16_t event, uint32_t actionList[MAX_ACTIONS]) {
 		}
 		break;
 	case Playing:
-
+		if (event == EndOfAudioFile) {
+			// Next State
+			Current_State = Stopped;
+			// Exit Actions
+			actionList[actionIndex++] = greenOff;
+			// Transition Actions
+			// Stop entry actions
+			actionList[actionIndex++] = redOn;
+		}
 		break;
 	case Paused:
 
@@ -338,6 +347,7 @@ void File_System (void const *arg) {
 	WAVHEADER header; 			// header struct for wav file
 	size_t rd; 					// number of blocks read using fread
 	int16_t bufIndx = 0; 		// Current buffer index (can only be 0 or 1)
+	int debugCount = 0;
 
 
 	// Initialize USB device
@@ -450,13 +460,23 @@ void File_System (void const *arg) {
 							rd = fread((void *)AudioBuffer1, sizeof(int16_t), BUF_LEN, audioFile);
 						}
 
+						debugCount++;
+
 						// Only put more data on the DMA with a full buffer
 						if (rd == BUF_LEN) {
 							// Send message with next buffer number
 							osMessagePut(mid_DMAQueue, bufIndx, osWaitForever);
 
+							if (debugCount == 2) {
+								LED_On(LED_Orange);
+							}
+
 							// Wait for semaphore to release
 							osSemaphoreWait(SEM_DMA_ID, osWaitForever);
+
+							if (debugCount == 2) {
+								LED_Off(LED_Orange);
+							}
 						}
 
 						// Read message queue with no delay
@@ -482,7 +502,7 @@ void File_System (void const *arg) {
 					// Audio file not playing. Only stop file if rd is less than BUF_LEN.v
 					if (rd < BUF_LEN) {
 						// Send song done to state machine
-						osMessagePut(mid_CMDQueue, StopEvent, osWaitForever);
+						osMessagePut(mid_CMDQueue, EndOfAudioFile, osWaitForever);
 
 						// End of song or stop
 						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
@@ -502,10 +522,12 @@ void File_System (void const *arg) {
 
 /* User Callbacks: user has to implement these functions if they are needed. */
 /* This function is called when the requested data has been completely transferred. */
+int callbackCount = 0;
 void    BSP_AUDIO_OUT_TransferComplete_CallBack(void){
 	// Declare locals
 	osEvent evt;
 
+	if (callbackCount == 2) LED_On(LED_Blue);
 	// Read message queue for next buffer
 	evt = osMessageGet(mid_DMAQueue, 0);
 
@@ -524,6 +546,10 @@ void    BSP_AUDIO_OUT_TransferComplete_CallBack(void){
 
 	// Buffer changed, release semaphore
 	osSemaphoreRelease(SEM_DMA_ID);
+
+	if (callbackCount == 2) LED_Off(LED_Blue);
+
+	callbackCount++;
 }
 
 /* This function is called when half of the requested buffer has been transferred. */
