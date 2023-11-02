@@ -308,6 +308,14 @@ void Rx_Command (void const *arg) {
 			// Play button pressed
 			osMessagePut(mid_CMDQueue, PlayPressed, osWaitForever);
 		}
+		else if (!strcmp(rx_char, Pause_File_char)) {
+			// Pause button pressed
+			osMessagePut(mid_CMDQueue, PausePressed, osWaitForever);
+		}
+		else if (!strcmp(rx_char, Stop_File_char)) {
+			// Stop button pressed
+			osMessagePut(mid_CMDQueue, StopPressed, osWaitForever);
+		}
 	}
 }
 
