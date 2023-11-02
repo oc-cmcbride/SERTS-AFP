@@ -146,6 +146,7 @@ Public Class Form1
             SerialPort1.Write(FileListBox.SelectedItem)
             SerialPort1.Write(b, 0, 1)
         End If
+        ResumeButton.Hide()
         PauseButton.Show()
         StopButton.Show()
 
