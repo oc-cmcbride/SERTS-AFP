@@ -41,14 +41,14 @@
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/SRC/ARM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/UserCodeTemplates&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/Board&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/Board&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Device/Source/ARM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates_LL/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/Device/STM32F407VGTx&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/File_System&quot;"/>
@@ -83,14 +83,14 @@
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/SRC/ARM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/UserCodeTemplates&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/Board&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/Board&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Device/Source/ARM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates_LL/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/Device/STM32F407VGTx&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/File_System&quot;"/>
@@ -121,14 +121,14 @@
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/SRC/ARM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/UserCodeTemplates&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/Board&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/Board&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Device/Source/ARM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates_LL/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/Device/STM32F407VGTx&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/File_System&quot;"/>
@@ -146,8 +146,8 @@
 								<option id="com.arm.tool.c.linker.option.scatter.530699035" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="${workspace_loc:/${ProjName}}/cmsis_rte_STM32F407VGTx.sct" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.arm.tool.c.linker.implicit.libs.1039048974" name="Implicit other library files" superClass="com.arm.tool.c.linker.implicit.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/LIB/ARM/RTX_CM4.lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Lib/ARM/FS_LFN_CM3_L.lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Lib/ARM/USB_CM3_L.lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Lib/ARM/FS_LFN_CM3_L.lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Lib/ARM/USB_CM3_L.lib&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.arm.tool.c.linker.libs.1233309382" name="User library files" superClass="com.arm.tool.c.linker.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/src/libPDMFilter_CM4_Keil.lib&quot;"/>
@@ -202,14 +202,14 @@
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/SRC/ARM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/UserCodeTemplates&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/Board&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/Board&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Device/Source/ARM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates_LL/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/Device/STM32F407VGTx&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/File_System&quot;"/>
@@ -237,14 +237,14 @@
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/SRC/ARM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/UserCodeTemplates&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/Board&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/Board&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Device/Source/ARM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates_LL/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/Device/STM32F407VGTx&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/File_System&quot;"/>
@@ -275,14 +275,14 @@
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/INC&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/SRC/ARM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/UserCodeTemplates&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/Board&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Device/Source/ARM&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates/Inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.17.1/MDK/Templates_LL/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/Board&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/Drivers/STM32F4xx_HAL_Driver/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Device/Source/ARM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates/Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/STM32F4xx_DFP/2.16.0/MDK/Templates_LL/Inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/Device/STM32F407VGTx&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}/RTE/File_System&quot;"/>
@@ -299,8 +299,8 @@
 								<option id="com.arm.tool.c.linker.option.scatter.960542604" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="${workspace_loc:/${ProjName}}/cmsis_rte_STM32F407VGTx.sct" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.arm.tool.c.linker.implicit.libs.190201736" name="Implicit other library files" superClass="com.arm.tool.c.linker.implicit.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/ARM/CMSIS/5.9.0/CMSIS/RTOS/RTX/LIB/ARM/RTX_CM4.lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/FileSystem/Lib/ARM/FS_LFN_CM3_L.lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.16.0/USB/Lib/ARM/USB_CM3_L.lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/FileSystem/Lib/ARM/FS_LFN_CM3_L.lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cmsis_pack_root}/Keil/MDK-Middleware/7.12.0/USB/Lib/ARM/USB_CM3_L.lib&quot;"/>
 								</option>
 							</tool>
 							<tool id="com.arm.tool.librarian.v6.base.var.arm_compiler_6-6.1094452243" name="Arm Librarian 6" superClass="com.arm.tool.librarian.v6.base.var.arm_compiler_6-6"/>
