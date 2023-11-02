@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.arm.debug.cmsis.launch">
-    <stringAttribute key="*:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;149&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;90&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;185&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;99&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;50&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;37&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;81&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;53&#9;-1&#9;true"/>
+    <stringAttribute key="*:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;149&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;90&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;95&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;41&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;50&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;37&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;62&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;53&#9;-1&#9;true"/>
     <mapAttribute key="AverageDurationTracker">
         <mapEntry key="*Fetching Data" value="131629446"/>
-        <mapEntry key="*Fetching Data Model" value="88079"/>
-        <mapEntry key="*list global low level symbols" value="21636655"/>
+        <mapEntry key="*Fetching Data Model" value="90139"/>
+        <mapEntry key="*list global low level symbols" value="20676613"/>
         <mapEntry key="*loading memory from target" value="7209934"/>
         <mapEntry key="*loading values from target" value="7660955"/>
         <mapEntry key="*updating registers" value="89956300"/>
         <mapEntry key="*updating variables" value="1832916"/>
-        <mapEntry key="AddEventObserver" value="285019"/>
+        <mapEntry key="AddEventObserver" value="253659"/>
         <mapEntry key="Evaluate" value="4496309"/>
         <mapEntry key="Retrieving globals list" value="13796800"/>
-        <mapEntry key="areCachesAvailable" value="242800"/>
+        <mapEntry key="areCachesAvailable" value="219300"/>
         <mapEntry key="break" value="5212178"/>
-        <mapEntry key="compute execution mode" value="574541"/>
-        <mapEntry key="continue" value="24531777"/>
+        <mapEntry key="compute execution mode" value="348020"/>
+        <mapEntry key="continue" value="14746338"/>
         <mapEntry key="disable" value="2388000"/>
         <mapEntry key="disassemble" value="20430249"/>
-        <mapEntry key="evaluate address" value="1148102"/>
-        <mapEntry key="file" value="53294400"/>
+        <mapEntry key="evaluate address" value="768725"/>
+        <mapEntry key="file" value="46015350"/>
         <mapEntry key="finish" value="14999000"/>
         <mapEntry key="get byte order" value="141862"/>
-        <mapEntry key="get capabilities" value="91078"/>
-        <mapEntry key="get execution addresss" value="647217"/>
-        <mapEntry key="get source lines" value="516394"/>
-        <mapEntry key="getValidEncodings" value="157212"/>
-        <mapEntry key="initialize command help" value="27598502"/>
+        <mapEntry key="get capabilities" value="69739"/>
+        <mapEntry key="get execution addresss" value="400408"/>
+        <mapEntry key="get source lines" value="307947"/>
+        <mapEntry key="getValidEncodings" value="163556"/>
+        <mapEntry key="initialize command help" value="21996551"/>
         <mapEntry key="interrupt" value="100431578"/>
-        <mapEntry key="list breakpoint options" value="202957"/>
-        <mapEntry key="list breakpoints" value="281636"/>
-        <mapEntry key="list instruction sets" value="88022"/>
-        <mapEntry key="list signals" value="301638"/>
-        <mapEntry key="list watchpoint options" value="123371"/>
-        <mapEntry key="list watchpoints" value="487467"/>
-        <mapEntry key="load" value="2585497"/>
+        <mapEntry key="list breakpoint options" value="83614"/>
+        <mapEntry key="list breakpoints" value="170318"/>
+        <mapEntry key="list instruction sets" value="77861"/>
+        <mapEntry key="list signals" value="285769"/>
+        <mapEntry key="list watchpoint options" value="102385"/>
+        <mapEntry key="list watchpoints" value="274233"/>
+        <mapEntry key="load" value="2523398"/>
         <mapEntry key="next" value="65379433"/>
         <mapEntry key="remove" value="4143010"/>
-        <mapEntry key="run script" value="9563561758"/>
-        <mapEntry key="set CWD" value="997450"/>
+        <mapEntry key="run script" value="9498660329"/>
+        <mapEntry key="set CWD" value="757525"/>
         <mapEntry key="set breakpoint properties" value="6554374"/>
-        <mapEntry key="set debug-from" value="505550"/>
-        <mapEntry key="start" value="21025329"/>
+        <mapEntry key="set debug-from" value="601225"/>
+        <mapEntry key="start" value="22303614"/>
         <mapEntry key="step" value="46414768"/>
-        <mapEntry key="target reset" value="48759058"/>
+        <mapEntry key="target reset" value="45898979"/>
         <mapEntry key="toggleBreakpoint" value="7439233"/>
-        <mapEntry key="waitForTargetToStop" value="32234582"/>
+        <mapEntry key="waitForTargetToStop" value="29456745"/>
     </mapAttribute>
     <stringAttribute key="CLOCK_SPEED" value="10MHz"/>
     <stringAttribute key="CMSIS_DCORE" value="Cortex-M4"/>

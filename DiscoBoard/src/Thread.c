@@ -21,6 +21,8 @@
 // File reading constants
 #define Show_Files_char "1"
 #define Play_File_char "4"
+#define Pause_File_char "5"
+#define Stop_File_char "6"
 
 // Action/Event constants
 #define MAX_ACTIONS 10
@@ -35,7 +37,6 @@ enum event {
   IndexPressed,
   IndexingDone,
   PlayPressed,
-  ResumePressed,
   PausePressed,
   StopPressed,
   EndOfAudioFile
@@ -231,9 +232,48 @@ void Process_Event(uint16_t event, uint32_t actionList[MAX_ACTIONS]) {
 			// Stop entry actions
 			actionList[actionIndex++] = redOn;
 		}
+		else if (event == StopPressed) {
+			// Next State
+			Current_State = Stopped;
+			// Exit Actions
+			actionList[actionIndex++] = greenOff;
+			actionList[actionIndex++] = stopStreamAudio;
+			// Transition actions
+			// Stop entry actions
+			actionList[actionIndex++] = redOn;
+		}
+		else if (event == PausePressed) {
+			// Next state
+			Current_State = Paused;
+			// Exit actions
+			actionList[actionIndex++] = greenOff;
+			actionList[actionIndex++] = pauseStreamAudio;
+			// Transition actions
+			// Pause entry actions
+			actionList[actionIndex++] = yellowOn;
+		}
 		break;
 	case Paused:
-
+		if (event == PlayPressed) {
+			// Next state
+			Current_State = Playing;
+			// Exit actions
+			actionList[actionIndex++] = yellowOff;
+			// Transition actions
+			// Play entry actions
+			actionList[actionIndex++] = greenOn;
+			actionList[actionIndex++] = resumeStreamAudio;
+		}
+		else if (event == StopPressed) {
+			// Next state
+			Current_State = Stopped;
+			// Exit actions
+			actionList[actionIndex++] = yellowOff;
+			// Transition actions
+			// Stop entry actions
+			actionList[actionIndex++] = redOn;
+			actionList[actionIndex++] = stopStreamAudio;
+		}
 		break;
 	default:
 		break;
@@ -319,10 +359,11 @@ void Control (void const *arg) {
 					LED_On(LED_Orange);
 					break;
 				case startListFiles:
-					osMessagePut(mid_FSQueue, startListFiles, osWaitForever);
-					break;
 				case startStreamAudio:
-					osMessagePut(mid_FSQueue, startStreamAudio, osWaitForever);
+				case stopStreamAudio:
+				case pauseStreamAudio:
+				case resumeStreamAudio:
+					osMessagePut(mid_FSQueue, actionList[i], osWaitForever);
 					break;
 				default:
 					break;
@@ -344,11 +385,11 @@ void File_System (void const *arg) {
 	char *StartFileList_msg = "2\n";
 	char *EndFileList_msg = "3\n";
 	fsFileInfo fileInfo;
-	FILE *audioFile;
+	FILE *audioFile = NULL;
 	WAVHEADER header; 			// header struct for wav file
 	size_t rd; 					// number of blocks read using fread
 	int16_t bufIndx = 0; 		// Current buffer index (can only be 0 or 1)
-	int debugCount = 0;
+	uint32_t audioStopType = EndOfAudioFile;	// Event that caused audio to stop. Can be pause, stop, or end of file
 
 
 	// Initialize USB device
@@ -371,6 +412,9 @@ void File_System (void const *arg) {
 		if (fstatus != fsOK) {
 			// Handle fmount error
 		}
+
+		// Initialize DMA with default values
+		BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_AUTO, 0x46, 44100);
 
 		// Main thread loop
 		while (1) {
@@ -399,6 +443,7 @@ void File_System (void const *arg) {
 					osMessagePut(mid_CMDQueue, IndexingDone, osWaitForever);
 
 					break;
+
 				case startStreamAudio:
 					// OpenFile
 					osSemaphoreWait(SEM_FILE_ID, osWaitForever);
@@ -410,6 +455,7 @@ void File_System (void const *arg) {
 						fread((void *)&header, sizeof(header), 1, audioFile);
 
 						// Initialize audio output
+						BSP_AUDIO_OUT_Stop(CODEC_PDWN_HW);
 						rtrn = BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_AUTO, 0x46, header.sample_rate);
 						if (rtrn != AUDIO_OK) {
 							// Audio init error handling
@@ -421,6 +467,38 @@ void File_System (void const *arg) {
 						// Start the audio player, size is number of bytes so mult. by 2
 						BSP_AUDIO_OUT_Play((uint16_t *)AudioBuffer0, BUF_LEN*2);
 					}
+
+					// No break at end of case!
+
+				case resumeStreamAudio:
+					// If not at the beginning of the song, resume play
+					if (evt.value.v == resumeStreamAudio) {
+						// Fill next buffer
+						if (bufIndx) {
+							// Switch from buffer 1 to buffer 0. Fill buffer 0.
+							bufIndx = 0;
+							rd = fread((void *)AudioBuffer0, sizeof(int16_t), BUF_LEN, audioFile);
+						}
+						else {
+							// Switch from buffer 0 to buffer 1. Fill buffer 1.
+							bufIndx = 1;
+							rd = fread((void *)AudioBuffer1, sizeof(int16_t), BUF_LEN, audioFile);
+						}
+
+						// Unmute
+						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
+
+						// Start DMA again
+						if (bufIndx == 0) {
+							BSP_AUDIO_OUT_ChangeBuffer((uint16_t *)AudioBuffer0, BUF_LEN);
+						}
+						else {
+							BSP_AUDIO_OUT_ChangeBuffer((uint16_t *)AudioBuffer1, BUF_LEN);
+						}
+					}
+
+					// Reset default audio stop type
+					audioStopType = EndOfAudioFile;
 
 					// Play loop
 					while (rd == BUF_LEN) {
@@ -444,16 +522,48 @@ void File_System (void const *arg) {
 							// Wait for semaphore to release
 							osSemaphoreWait(SEM_DMA_ID, osWaitForever);
 						}
-					}
 
-					// Audio file finished, clean up
+						// Read message queue with no delay
+						evt = osMessageGet(mid_FSQueue, 0);
+
+						// Check for valid message
+						if (evt.status == osEventMessage) {
+							// Check for pause or stop message
+							if (evt.value.v == pauseStreamAudio || evt.value.v == stopStreamAudio) {
+								audioStopType = evt.value.v;
+								rd = 0;
+							}
+						}
+					} // end while (rd == BUF_LEN)
+
+					// Audio file stopped, mute sound
 					BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
-					fclose(audioFile);
 
-					// Send complete message
-					osMessagePut(mid_CMDQueue, EndOfAudioFile, osWaitForever);
+					// Clean up based on stop type
+					switch (audioStopType) {
+					case EndOfAudioFile:
+						osMessagePut(mid_CMDQueue, EndOfAudioFile, osWaitForever);
+						// No break!
+					case stopStreamAudio:
+						fclose(audioFile);
+						audioFile = NULL;
+						break;
+					case pauseStreamAudio:
+						// Perform any special actions on pause
+						break;
+					default:
+						break;
+					} // end switch(audioStopType)
+					break;	// end case resumeStreamAudio
 
-					break;
+				case stopStreamAudio:
+					// Perform cleanup for stopping
+					if (audioFile != NULL) {
+						fclose(audioFile);
+						audioFile = NULL;
+					}
+					break; // end case stopStreamAudio
+
 				default:
 					break;
 				}
