@@ -601,10 +601,10 @@ void    BSP_AUDIO_OUT_TransferComplete_CallBack(void){
 			// Buffer 1
 			BSP_AUDIO_OUT_ChangeBuffer((uint16_t*)AudioBuffer1, BUF_LEN);
 		}
-	}
 
-	// Buffer changed, release semaphore
-	osSemaphoreRelease(SEM_DMA_ID);
+		// Buffer changed, release semaphore
+		osSemaphoreRelease(SEM_DMA_ID);
+	}
 }
 
 /* This function is called when half of the requested buffer has been transferred. */
