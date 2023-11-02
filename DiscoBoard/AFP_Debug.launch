@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.arm.debug.cmsis.launch">
-    <stringAttribute key="*:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;149&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;90&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;108&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;99&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;50&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;37&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;78&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;53&#9;-1&#9;true"/>
+    <stringAttribute key="*:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;149&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;90&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;185&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;99&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;50&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;37&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;81&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;53&#9;-1&#9;true"/>
     <mapAttribute key="AverageDurationTracker">
-        <mapEntry key="*Fetching Data" value="131195450"/>
-        <mapEntry key="*Fetching Data Model" value="73650"/>
-        <mapEntry key="*list global low level symbols" value="18334237"/>
-        <mapEntry key="*loading memory from target" value="7109275"/>
-        <mapEntry key="*loading values from target" value="14196779"/>
+        <mapEntry key="*Fetching Data" value="131629446"/>
+        <mapEntry key="*Fetching Data Model" value="88079"/>
+        <mapEntry key="*list global low level symbols" value="21636655"/>
+        <mapEntry key="*loading memory from target" value="7209934"/>
+        <mapEntry key="*loading values from target" value="7660955"/>
         <mapEntry key="*updating registers" value="89956300"/>
-        <mapEntry key="*updating variables" value="1242746"/>
-        <mapEntry key="AddEventObserver" value="230478"/>
-        <mapEntry key="Evaluate" value="14384936"/>
-        <mapEntry key="Retrieving globals list" value="10193600"/>
-        <mapEntry key="areCachesAvailable" value="399304"/>
-        <mapEntry key="break" value="9621555"/>
-        <mapEntry key="compute execution mode" value="401256"/>
-        <mapEntry key="continue" value="20596575"/>
+        <mapEntry key="*updating variables" value="1832916"/>
+        <mapEntry key="AddEventObserver" value="285019"/>
+        <mapEntry key="Evaluate" value="4496309"/>
+        <mapEntry key="Retrieving globals list" value="13796800"/>
+        <mapEntry key="areCachesAvailable" value="242800"/>
+        <mapEntry key="break" value="5212178"/>
+        <mapEntry key="compute execution mode" value="574541"/>
+        <mapEntry key="continue" value="24531777"/>
+        <mapEntry key="disable" value="2388000"/>
         <mapEntry key="disassemble" value="20430249"/>
-        <mapEntry key="file" value="37239909"/>
+        <mapEntry key="evaluate address" value="1148102"/>
+        <mapEntry key="file" value="53294400"/>
         <mapEntry key="finish" value="14999000"/>
-        <mapEntry key="get byte order" value="99900"/>
-        <mapEntry key="get capabilities" value="56352"/>
-        <mapEntry key="get execution addresss" value="399133"/>
-        <mapEntry key="get source lines" value="316577"/>
-        <mapEntry key="getValidEncodings" value="307499"/>
-        <mapEntry key="initialize command help" value="19542064"/>
-        <mapEntry key="interrupt" value="318369912"/>
-        <mapEntry key="list breakpoint options" value="35912"/>
-        <mapEntry key="list breakpoints" value="63796"/>
-        <mapEntry key="list instruction sets" value="129999"/>
-        <mapEntry key="list signals" value="113904"/>
-        <mapEntry key="list watchpoint options" value="55109"/>
-        <mapEntry key="list watchpoints" value="86764"/>
-        <mapEntry key="load" value="1879781"/>
-        <mapEntry key="next" value="40787021"/>
-        <mapEntry key="remove" value="4466387"/>
-        <mapEntry key="run script" value="9321685781"/>
-        <mapEntry key="set CWD" value="1004620"/>
-        <mapEntry key="set breakpoint properties" value="9114743"/>
-        <mapEntry key="set debug-from" value="264170"/>
-        <mapEntry key="start" value="17608393"/>
+        <mapEntry key="get byte order" value="141862"/>
+        <mapEntry key="get capabilities" value="91078"/>
+        <mapEntry key="get execution addresss" value="647217"/>
+        <mapEntry key="get source lines" value="516394"/>
+        <mapEntry key="getValidEncodings" value="157212"/>
+        <mapEntry key="initialize command help" value="27598502"/>
+        <mapEntry key="interrupt" value="100431578"/>
+        <mapEntry key="list breakpoint options" value="202957"/>
+        <mapEntry key="list breakpoints" value="281636"/>
+        <mapEntry key="list instruction sets" value="88022"/>
+        <mapEntry key="list signals" value="301638"/>
+        <mapEntry key="list watchpoint options" value="123371"/>
+        <mapEntry key="list watchpoints" value="487467"/>
+        <mapEntry key="load" value="2585497"/>
+        <mapEntry key="next" value="65379433"/>
+        <mapEntry key="remove" value="4143010"/>
+        <mapEntry key="run script" value="9563561758"/>
+        <mapEntry key="set CWD" value="997450"/>
+        <mapEntry key="set breakpoint properties" value="6554374"/>
+        <mapEntry key="set debug-from" value="505550"/>
+        <mapEntry key="start" value="21025329"/>
         <mapEntry key="step" value="46414768"/>
-        <mapEntry key="target reset" value="39641276"/>
-        <mapEntry key="toggleBreakpoint" value="8103537"/>
-        <mapEntry key="waitForTargetToStop" value="33043028"/>
+        <mapEntry key="target reset" value="48759058"/>
+        <mapEntry key="toggleBreakpoint" value="7439233"/>
+        <mapEntry key="waitForTargetToStop" value="32234582"/>
     </mapAttribute>
     <stringAttribute key="CLOCK_SPEED" value="10MHz"/>
     <stringAttribute key="CMSIS_DCORE" value="Cortex-M4"/>
@@ -123,12 +125,14 @@
         <listEntry value="100"/>
     </listAttribute>
     <listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.MemoryView.addresses">
-        <listEntry value="&lt;Next Instruction&gt;"/>
         <listEntry value=""/>
+        <listEntry value="0x2000e4d4"/>
+        <listEntry value="&lt;Next Instruction&gt;"/>
     </listAttribute>
     <listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.MemoryView.ranges">
-        <listEntry value="1024"/>
         <listEntry value=""/>
+        <listEntry value="1024"/>
+        <listEntry value="1024"/>
     </listAttribute>
     <stringAttribute key="config_db_connection_keys" value="FILES.SELECTED_DEBUG_OPEATION rvi_address connection_type CMSIS_PROJ"/>
     <stringAttribute key="config_db_connection_type" value="Bare Metal Debug"/>
@@ -139,15 +143,15 @@
     <booleanAttribute key="connectOnly" value="false"/>
     <stringAttribute key="connection_type" value="ST-Link"/>
     <booleanAttribute key="debugSequenceLogging" value="false"/>
-    <stringAttribute key="debugger.view.DataView.os:DataView" value="rO0ABXNyACtjb20uYXJtLmRlYnVnLnZpZXdzLmRhdGEuRGF0YVZpZXdQcm9wZXJ0aWVzAAAAAAAAAAECAAB4cgAlY29tLmFybS5kZWJ1Zy52aWV3cy5kYXRhLlByb3BlcnR5VHJlZQAAAAAAAAABAwABTAAFbURhdGF0ABNMamF2YS91dGlsL0hhc2hNYXA7eHB3BAAAAAF0ABJkYXRhYmFzZVByb3BlcnRpZXNzcQB+AAF3BAAAAAF0AANydHhzcgArY29tLmFybS5kZWJ1Zy52aWV3cy5kYXRhLkRhdGFiYXNlUHJvcGVydGllcwAAAAAAAAABAgAAeHEAfgABdwQAAAADdAAGdGFibGVzc3EAfgABdwQAAAACdAAGc3RhY2tzc3IAKGNvbS5hcm0uZGVidWcudmlld3MuZGF0YS5UYWJsZVByb3BlcnRpZXMAAAAAAAAAAQIAAHhxAH4AAXcEAAAABHQAAmlkcQB+AAt0ABBjb2x1bW5BdXRvUmVzaXplc3EAfgABdwQAAAAIdAABMHQABHRydWV0AAExcQB+ABJ0AAEycQB+ABJ0AAEzcQB+ABJ0AAItMXEAfgASdAABNHEAfgASdAABNXEAfgASdAABNnEAfgASeHQADGNvbHVtbldpZHRoc3NxAH4AAXcEAAAACHQAATB0AAI0MnQAATF0AAMxMjR0AAEydAADMTUwdAABM3QAAjcydAACLTF0AAIyNHQAATR0AAI3OHQAATV0AAMxMDR0AAE2dAACNjh4dAAGY29uZmlndADNT3V0bGluZUNvbmZpZzEJOAktMQlmYWxzZQl0cnVlCTI0CS0xCXRydWUJMAl0cnVlCXRydWUJNDIJLTEJdHJ1ZQkxCXRydWUJdHJ1ZQkxMjQJLTEJdHJ1ZQkyCXRydWUJdHJ1ZQkxNTAJLTEJdHJ1ZQkzCXRydWUJdHJ1ZQk3MgktMQl0cnVlCTQJdHJ1ZQl0cnVlCTc4CS0xCXRydWUJNQl0cnVlCXRydWUJMTA0CS0xCXRydWUJNgl0cnVlCXRydWUJNjgJLTEJdHJ1ZXh0AApzZW1hcGhvcmVzc3EAfgAMdwQAAAAEcQB+AA5xAH4ALnEAfgAPc3EAfgABdwQAAAAEdAABMHEAfgASdAABMXEAfgASdAABMnEAfgASdAACLTFxAH4AEnhxAH4AGnNxAH4AAXcEAAAABHQAATB0AAI4N3QAATF0AAI1N3QAATJ0AAI5OXQAAi0xdAACMjR4cQB+ACx0AG5PdXRsaW5lQ29uZmlnMQk0CS0xCWZhbHNlCXRydWUJMjQJLTEJdHJ1ZQkwCXRydWUJdHJ1ZQk4NwktMQl0cnVlCTEJdHJ1ZQl0cnVlCTU3CS0xCXRydWUJMgl0cnVlCXRydWUJOTkJLTEJdHJ1ZXh4cQB+AA5xAH4ABnQADGN1cnJlbnRUYWJsZXEAfgAueHh4"/>
+    <stringAttribute key="debugger.view.DataView.os:DataView" value="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"/>
     <listAttribute key="debugger.view.DisassemblyView:current">
         <listEntry value="&lt;Next Instruction&gt;"/>
         <listEntry value="100"/>
     </listAttribute>
     <stringAttribute key="debugger.view.MemoryView" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;page&gt;&#10;&#9;&lt;memoryView/&gt;&#10;&lt;/page&gt;&#10;"/>
     <listAttribute key="debugger.view.MemoryView:current">
-        <listEntry value="2000231C"/>
-        <listEntry value="1024"/>
+        <listEntry value=""/>
+        <listEntry value=""/>
     </listAttribute>
     <stringAttribute key="debugger.view.NewRegisterView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;49&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;90&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;45&#9;-1&#9;true&#9;3&#9;false&#9;true&#9;41&#9;-1&#9;true&#9;4&#9;false&#9;true&#9;50&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;37&#9;-1&#9;true&#9;6&#9;false&#9;true&#9;62&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;53&#9;-1&#9;true"/>
     <stringAttribute key="debugger.view.NewRegisterView:_selectedRegisterSet" value="All registers"/>
@@ -155,6 +159,8 @@
     <listAttribute key="debugger.view.VariableTreeView:USER_ADDED_FILE_STATICS:*"/>
     <listAttribute key="debugger.view.VariableTreeView:USER_ADDED_GLOBALS:*">
         <listEntry value="&quot;src/Thread.c&quot;::SEM_DMA_ID"/>
+        <listEntry value="&quot;src/Thread.c&quot;::callbacks"/>
+        <listEntry value="&quot;src/Thread.c&quot;::playLoops"/>
     </listAttribute>
     <booleanAttribute key="debugger.view.register.DrawAsHex" value="false"/>
     <booleanAttribute key="debugger.view.variable.DrawAsHex" value="false"/>

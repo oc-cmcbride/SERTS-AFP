@@ -160,6 +160,7 @@ void Init_Thread (void) {
 	if (!mid_CMDQueue) return;
 	mid_FSQueue = osMessageCreate(osMessageQ(FSQueue), NULL);
 	if (!mid_FSQueue) return;
+	mid_DMAQueue = osMessageCreate(osMessageQ(DMAQueue), NULL);
 
 	// Create threads
 	tid_Rx_Command = osThreadCreate(osThread(Rx_Command), NULL);
@@ -384,7 +385,7 @@ void File_System (void const *arg) {
 					// File system enabled, send start message
 					UART_send(StartFileList_msg, 2);
 
-					// File system loop
+					// File read loop
 					fileInfo.fileID = 0;
 					while (ffind("*.wav", &fileInfo) == fsOK) {
 						if (fileInfo.attrib == 32) {
@@ -393,13 +394,13 @@ void File_System (void const *arg) {
 						}
 					}
 
-					// File system disabled, send end messages
+					// File read complete, send end messages
 					UART_send(EndFileList_msg, 2);
 					osMessagePut(mid_CMDQueue, IndexingDone, osWaitForever);
 
 					break;
 				case startStreamAudio:
-					// Open file
+					// OpenFile
 					osSemaphoreWait(SEM_FILE_ID, osWaitForever);
 					audioFile = fopen(currentFileName, "r");
 					osSemaphoreRelease(SEM_FILE_ID);
@@ -421,31 +422,6 @@ void File_System (void const *arg) {
 						BSP_AUDIO_OUT_Play((uint16_t *)AudioBuffer0, BUF_LEN*2);
 					}
 
-					// No break at end of case!
-
-				case resumeStreamAudio:
-					// If not at the beginning of the song, resume play
-					if (evt.value.v == resumeStreamAudio) {
-						// Fill next buffer
-						if (bufIndx) {
-							// Switch from buffer 1 to buffer 0. Fill buffer 0.
-							bufIndx = 0;
-							rd = fread((void *)AudioBuffer0, sizeof(int16_t), BUF_LEN, audioFile);
-						}
-						else {
-							// Switch from buffer 0 to buffer 1. Fill buffer 1.
-							bufIndx = 1;
-							rd = fread((void *)AudioBuffer1, sizeof(int16_t), BUF_LEN, audioFile);
-						}
-
-						// Unmute
-						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
-
-						// Start DMA again
-						osMessagePut(mid_DMAQueue, bufIndx, osWaitForever);
-						osSemaphoreWait(SEM_DMA_ID, osWaitForever);
-					}
-
 					// Play loop
 					while (rd == BUF_LEN) {
 						// Fill next buffer
@@ -460,60 +436,27 @@ void File_System (void const *arg) {
 							rd = fread((void *)AudioBuffer1, sizeof(int16_t), BUF_LEN, audioFile);
 						}
 
-						debugCount++;
-
 						// Only put more data on the DMA with a full buffer
 						if (rd == BUF_LEN) {
 							// Send message with next buffer number
 							osMessagePut(mid_DMAQueue, bufIndx, osWaitForever);
 
-							if (debugCount == 2) {
-								LED_On(LED_Orange);
-							}
-
 							// Wait for semaphore to release
 							osSemaphoreWait(SEM_DMA_ID, osWaitForever);
-
-							if (debugCount == 2) {
-								LED_Off(LED_Orange);
-							}
 						}
-
-						// Read message queue with no delay
-						evt = osMessageGet(mid_FSQueue, 0);
-
-						// Check for valid message
-						if (evt.status == osEventMessage) {
-							// Check for pause or stop message
-							if (evt.value.v == pauseStreamAudio) {
-								// Mute audio
-								BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
-
-								// Set read length greater than buffer length; this indicates a pause
-								rd = BUF_LEN + 1;
-							}
-							else if (evt.value.v == stopStreamAudio) {
-								// Stop playing; set buffer length to 0
-								rd = 0;
-							}
-						}
-					} // end while (rd == BUF_LEN)
-
-					// Audio file not playing. Only stop file if rd is less than BUF_LEN.v
-					if (rd < BUF_LEN) {
-						// Send song done to state machine
-						osMessagePut(mid_CMDQueue, EndOfAudioFile, osWaitForever);
-
-						// End of song or stop
-						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
-
-						// Close audio file
-						fclose(audioFile);
 					}
-					break; // end case ResumePressed
+
+					// Audio file finished, clean up
+					BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+					fclose(audioFile);
+
+					// Send complete message
+					osMessagePut(mid_CMDQueue, EndOfAudioFile, osWaitForever);
+
+					break;
 				default:
 					break;
-				} // end switch (evt.value.v)
+				}
 			} // end if (status == osEventMessage)
 		} // end while (1)
 	} // end if (ustatus == usbOK)
@@ -522,12 +465,10 @@ void File_System (void const *arg) {
 
 /* User Callbacks: user has to implement these functions if they are needed. */
 /* This function is called when the requested data has been completely transferred. */
-int callbackCount = 0;
 void    BSP_AUDIO_OUT_TransferComplete_CallBack(void){
 	// Declare locals
 	osEvent evt;
 
-	if (callbackCount == 2) LED_On(LED_Blue);
 	// Read message queue for next buffer
 	evt = osMessageGet(mid_DMAQueue, 0);
 
@@ -546,10 +487,6 @@ void    BSP_AUDIO_OUT_TransferComplete_CallBack(void){
 
 	// Buffer changed, release semaphore
 	osSemaphoreRelease(SEM_DMA_ID);
-
-	if (callbackCount == 2) LED_Off(LED_Blue);
-
-	callbackCount++;
 }
 
 /* This function is called when half of the requested buffer has been transferred. */
