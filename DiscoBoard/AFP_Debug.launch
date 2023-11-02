@@ -92,13 +92,13 @@
     <stringAttribute key="CMSIS_PACK_NAME" value="STM32F4xx_DFP_STM32F407VGTx"/>
     <stringAttribute key="CMSIS_PACK_VERSION" value="2.17.1"/>
     <stringAttribute key="CMSIS_PNAME" value=""/>
-    <stringAttribute key="CMSIS_PREVIOUS_PRIMARY_FILE" value="C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\Debug\AFP.axf"/>
+    <stringAttribute key="CMSIS_PREVIOUS_PRIMARY_FILE" value="C:\Users\medem\OneDrive\Documents\GitHub\SERTS-AFP\DiscoBoard\Debug\AFP.axf"/>
     <stringAttribute key="CMSIS_PRIMARY_FILE" value="${workspace_loc:/AFP/Debug/AFP.axf}"/>
     <stringAttribute key="CMSIS_PROJ" value="AFP"/>
     <stringAttribute key="CMSIS_PROJECT_EXECUTABLE" value="${workspace_loc:/AFP/Debug/AFP.axf}"/>
     <stringAttribute key="CMSIS_RESET_TYPE" value="reset.system"/>
-    <stringAttribute key="CMSIS_SDF_DIR" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx"/>
-    <stringAttribute key="CMSIS_SVD_DIR" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\SVD\STM32F407"/>
+    <stringAttribute key="CMSIS_SDF_DIR" value="C:\Users\medem\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx"/>
+    <stringAttribute key="CMSIS_SVD_DIR" value="C:\Users\medem\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\SVD\STM32F40x"/>
     <listAttribute key="FILES.ICE_DEBUG">
         <listEntry value="ON_DEMAND_LOAD"/>
         <listEntry value="ALSO_LOAD_SYMBOLS"/>
@@ -106,18 +106,18 @@
     <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
     <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
     <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.TYPE" value="SYMBOLS_FILE"/>
-    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.VALUE" value="C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\Debug\AFP.axf"/>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.VALUE" value="C:\Users\medem\OneDrive\Documents\GitHub\SERTS-AFP\DiscoBoard\Debug\AFP.axf"/>
     <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.1.TYPE" value="SFR_SEARCH_DIRS"/>
-    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.1.VALUE" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\SVD\STM32F407"/>
+    <stringAttribute key="FILES.ICE_DEBUG.RESOURCES.1.VALUE" value="C:\Users\medem\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\SVD\STM32F40x"/>
     <intAttribute key="FILES.ICE_DEBUG.RESOURCES.COUNT" value="2"/>
     <stringAttribute key="FILES.SELECTED_DEBUG_OPEATION" value="ICE_DEBUG"/>
     <booleanAttribute key="KEY_COMMANDS_AFTER_CONNECT" value="false"/>
     <booleanAttribute key="KEY_COMMANDS_AS_CONNECT" value="true"/>
-    <stringAttribute key="KEY_COMMANDS_AS_CONNECT_TEXT" value="reset reset.system&#13;&#10;flash load-multiple &quot;C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\Debug\AFP.axf&quot;"/>
+    <stringAttribute key="KEY_COMMANDS_AS_CONNECT_TEXT" value="reset reset.system&#13;&#10;flash load-multiple &quot;C:\Users\medem\OneDrive\Documents\GitHub\SERTS-AFP\DiscoBoard\Debug\AFP.axf&quot;"/>
     <booleanAttribute key="SWD" value="true"/>
     <booleanAttribute key="SWJ" value="true"/>
-    <stringAttribute key="ULP_CONFIG" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\ulp-config.txt"/>
-    <stringAttribute key="breakpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;breakpoints order=&quot;ALPHA&quot;&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot; hardwareBreakpoint=&quot;yes&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;0x0800257E&quot; debugFile=&quot;C:/Users/cmcbr/OneDrive/Documents/.School/2023b FA/SERTS/SERTS-AFP/DiscoBoard/src/Thread.c&quot; hostFile=&quot;C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\src\Thread.c&quot; line=&quot;533&quot; function=&quot;File_System&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;0x0800257E&quot; debugFile=&quot;C:/Users/cmcbr/OneDrive/Documents/.School/2023b FA/SERTS/SERTS-AFP/DiscoBoard/src/Thread.c&quot; hostFile=&quot;C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\src\Thread.c&quot; line=&quot;541&quot; function=&quot;File_System&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&lt;/breakpoints&gt;&#10;"/>
+    <stringAttribute key="ULP_CONFIG" value="C:\Users\medem\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\ulp-config.txt"/>
+    <stringAttribute key="breakpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;breakpoints order=&quot;ALPHA&quot;&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot; hardwareBreakpoint=&quot;yes&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;0x0800257E&quot; debugFile=&quot;C:/Users/cmcbr/OneDrive/Documents/.School/2023b FA/SERTS/SERTS-AFP/DiscoBoard/src/Thread.c&quot; hostFile=&quot;C:\Users\cmcbr\OneDrive\Documents\.School\2023b FA\SERTS\SERTS-AFP\DiscoBoard\src\Thread.c&quot; line=&quot;533&quot; function=&quot;File_System&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;false&quot; version=&quot;2&quot; address=&quot;0x0800257E&quot; debugFile=&quot;C:/Users/cmcbr/OneDrive/Documents/.School/2023b FA/SERTS/SERTS-AFP/DiscoBoard/src/Thread.c&quot; hostFile=&quot;C:\Users\medem\OneDrive\Documents\GitHub\SERTS-AFP\DiscoBoard\src\Thread.c&quot; line=&quot;541&quot; function=&quot;File_System&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&lt;/breakpoints&gt;&#10;"/>
     <listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.DisassemblyView.addresses">
         <listEntry value="&lt;Next Instruction&gt;"/>
     </listAttribute>
@@ -139,7 +139,7 @@
     <stringAttribute key="config_db_platform_name" value="STM32F4xx_DFP_STM32F407VGTx"/>
     <stringAttribute key="config_db_project_type" value="Bare Metal Debug"/>
     <stringAttribute key="config_db_project_type_id" value="BARE_METAL"/>
-    <stringAttribute key="config_file" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\platform.sdf"/>
+    <stringAttribute key="config_file" value="C:\Users\medem\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\platform.sdf"/>
     <booleanAttribute key="connectOnly" value="false"/>
     <stringAttribute key="connection_type" value="ST-Link"/>
     <booleanAttribute key="debugSequenceLogging" value="false"/>
@@ -165,7 +165,7 @@
     <booleanAttribute key="debugger.view.register.DrawAsHex" value="false"/>
     <booleanAttribute key="debugger.view.variable.DrawAsHex" value="false"/>
     <stringAttribute key="dtsl_config" value="DtslScript_DebugAndOnChipTrace"/>
-    <stringAttribute key="dtsl_config_script" value="C:\Users\cmcbr\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\dtsl_config_script.py"/>
+    <stringAttribute key="dtsl_config_script" value="C:\Users\medem\Development Studio Workspace\.metadata\.plugins\com.arm.debug.cmsis\DS-MDK\STM32F4xx_DFP_STM32F407VGTx\dtsl_config_script.py"/>
     <stringAttribute key="dtsl_options_file" value=""/>
     <booleanAttribute key="holdReset" value="false"/>
     <intAttribute key="launch_configuration_version" value="3"/>

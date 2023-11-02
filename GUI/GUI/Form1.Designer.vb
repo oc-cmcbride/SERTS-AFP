@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
@@ -33,6 +33,7 @@ Partial Class Form1
         Me.PauseButton = New System.Windows.Forms.Button()
         Me.StopButton = New System.Windows.Forms.Button()
         Me.IndexButton = New System.Windows.Forms.Button()
+        Me.ResumeButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'SerialPort1
@@ -91,27 +92,27 @@ Partial Class Form1
         '
         'PlayButton
         '
-        Me.PlayButton.Location = New System.Drawing.Point(815, 551)
+        Me.PlayButton.Location = New System.Drawing.Point(815, 527)
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.Size = New System.Drawing.Size(118, 57)
+        Me.PlayButton.Size = New System.Drawing.Size(118, 105)
         Me.PlayButton.TabIndex = 9
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = True
         '
         'PauseButton
         '
-        Me.PauseButton.Location = New System.Drawing.Point(678, 551)
+        Me.PauseButton.Location = New System.Drawing.Point(743, 661)
         Me.PauseButton.Name = "PauseButton"
-        Me.PauseButton.Size = New System.Drawing.Size(98, 57)
+        Me.PauseButton.Size = New System.Drawing.Size(118, 51)
         Me.PauseButton.TabIndex = 10
         Me.PauseButton.Text = "Pause"
         Me.PauseButton.UseVisualStyleBackColor = True
         '
         'StopButton
         '
-        Me.StopButton.Location = New System.Drawing.Point(973, 551)
+        Me.StopButton.Location = New System.Drawing.Point(902, 661)
         Me.StopButton.Name = "StopButton"
-        Me.StopButton.Size = New System.Drawing.Size(98, 57)
+        Me.StopButton.Size = New System.Drawing.Size(98, 51)
         Me.StopButton.TabIndex = 11
         Me.StopButton.Text = "Stop"
         Me.StopButton.UseVisualStyleBackColor = True
@@ -125,11 +126,21 @@ Partial Class Form1
         Me.IndexButton.Text = "Index"
         Me.IndexButton.UseVisualStyleBackColor = True
         '
+        'ResumeButton
+        '
+        Me.ResumeButton.Location = New System.Drawing.Point(815, 660)
+        Me.ResumeButton.Name = "ResumeButton"
+        Me.ResumeButton.Size = New System.Drawing.Size(118, 47)
+        Me.ResumeButton.TabIndex = 13
+        Me.ResumeButton.Text = "Resume"
+        Me.ResumeButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 703)
+        Me.ClientSize = New System.Drawing.Size(1200, 833)
+        Me.Controls.Add(Me.ResumeButton)
         Me.Controls.Add(Me.IndexButton)
         Me.Controls.Add(Me.StopButton)
         Me.Controls.Add(Me.PauseButton)
@@ -156,4 +167,5 @@ Partial Class Form1
     Friend WithEvents PauseButton As Button
     Friend WithEvents StopButton As Button
     Friend WithEvents IndexButton As Button
+    Friend WithEvents ResumeButton As Button
 End Class

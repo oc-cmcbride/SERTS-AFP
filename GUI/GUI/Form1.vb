@@ -1,4 +1,5 @@
 ﻿Imports System.Threading
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
 
 Public Class Form1
     Delegate Sub ListBoxDelegate(ByVal command As Integer, ByVal myStr As String)
@@ -26,6 +27,9 @@ Public Class Form1
         For Each sp As String In My.Computer.Ports.SerialPortNames
             ComListBox.Items.Add(sp)
         Next
+        ResumeButton.Hide()
+        PauseButton.Hide()
+        StopButton.Hide()
 
         ' Make this a background thread so it automatically
         ' aborts when the main program stops.
@@ -142,6 +146,25 @@ Public Class Form1
             SerialPort1.Write(FileListBox.SelectedItem)
             SerialPort1.Write(b, 0, 1)
         End If
+        PauseButton.Show()
+        StopButton.Show()
+
+    End Sub
+    Private Sub Resume_Click(sender As Object, e As EventArgs) Handles ResumeButton.Click
+        Dim b(1) As Byte
+        b(0) = 0
+        ' A value of negative one (-1) is returned if no item is selected
+        If Not (FileListBox.SelectedIndex = -1) Then
+            SerialPort1.Write(PlayFileStr, 0, 1)
+            For index As Integer = 1 To 30
+            Next
+            SerialPort1.Write(FileListBox.SelectedItem)
+            SerialPort1.Write(b, 0, 1)
+        End If
+        ResumeButton.Hide()
+        PauseButton.Show()
+        StopButton.Show()
+
     End Sub
 
     Private Sub Pause_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
@@ -149,6 +172,9 @@ Public Class Form1
             ' Send Show_Files command
             SerialPort1.Write(PauseFileStr, 0, 1)
         End If
+        ResumeButton.Show()
+        PauseButton.Hide()
+        StopButton.Hide()
     End Sub
 
     Private Sub Stop_Click(sender As Object, e As EventArgs) Handles StopButton.Click
@@ -156,7 +182,10 @@ Public Class Form1
             ' Send Show_Files command
             SerialPort1.Write(StopFileStr, 0, 1)
         End If
+        PauseButton.Hide()
+        StopButton.Hide()
     End Sub
+
 End Class
 
 
